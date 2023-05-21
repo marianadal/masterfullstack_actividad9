@@ -12,7 +12,6 @@ const router = require("express").Router();
 
 // GET /api/articulos
 router.get("/", async (req, res) => {
-  console.log("Entra por aquí /api/articulos");
   try {
     const [result] = await getAll();
     res.json(result);
@@ -24,7 +23,6 @@ router.get("/", async (req, res) => {
 // GET /api/articulos/articuloId
 router.get("/:articuloId", async (req, res) => {
   const { articuloId } = req.params;
-  console.log(articuloId);
   try {
     const [articulo] = await getById(articuloId);
     if (articulo.length === 0) {
@@ -39,10 +37,8 @@ router.get("/:articuloId", async (req, res) => {
 });
 
 // GET /api/articulos/autor/autorId
-console.log("estoy en ruta /api/articulos/autor/autorId");
 router.get("/autor/:autorId", async (req, res) => {
   const { autorId } = req.params;
-  console.log(autorId);
   try {
     const [articulosByAutorId] = await getByAutorId(autorId);
     if (articulosByAutorId.length === 0) {
@@ -58,7 +54,6 @@ router.get("/autor/:autorId", async (req, res) => {
 
 // POST /api/articulos
 // La fecha de creación se pone por defecto la actual desde la tabla
-console.log("estoy en ruta POST/api/articulos");
 router.post("/", async (req, res) => {
   try {
     const [result] = await create(req.body);

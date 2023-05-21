@@ -7,7 +7,6 @@ const router = require("express").Router();
 
 // GET /api/autores
 router.get("/", async (req, res) => {
-  console.log("Entra por aquí /api/autores");
   try {
     const [result] = await getAll();
     res.json(result);
@@ -19,7 +18,6 @@ router.get("/", async (req, res) => {
 // GET /api/autores/autorId
 router.get("/:autorId", async (req, res) => {
   const { autorId } = req.params;
-  console.log(autorId);
   try {
     const [autor] = await getById(autorId);
     if (autor.length === 0) {

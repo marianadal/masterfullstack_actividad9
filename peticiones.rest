@@ -15,7 +15,7 @@ Content-Type: application/json
 
 {
     "nombre": "Autor de prueba",
-    "email": "email de prueba",
+    "email": "email de prueba2",
     "imagen": "https://"
 }
 
@@ -30,7 +30,7 @@ GET {{host}}/api/articulos
 GET {{host}}/api/articulos/3
 
 ###
-GET {{host}}/api/articulos/autor/2
+GET {{host}}/api/articulos/autor/3
 
 ###
 POST {{host}}/api/articulos
@@ -40,5 +40,5 @@ Content-Type: application/json
     "titulo": "Titulo de prueba",
     "descripcion": "Descripción de un artículo de prueba",
     "categoria": "Entrevistas",
-    "autores_id":5
+    "autores_id":3
 }
