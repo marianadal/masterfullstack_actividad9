@@ -6,7 +6,8 @@
 ################# API AUTORES
 GET {{host}}/api/autores
 
-
+###
+GET {{host}}/api/autores/4
 
 
 

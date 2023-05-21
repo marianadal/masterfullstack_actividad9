@@ -3,9 +3,9 @@
 // Más abajo si llamamos al método autocompletando se importará aquí él solo.
 const {
   getAll,
+  getById,
   getByAutorId,
   create,
-  getById,
 } = require("../../models/articulo.model");
 
 const router = require("express").Router();
@@ -40,6 +40,7 @@ router.get("/autor/:autorId", async (req, res) => {
 });
 
 // POST /api/articulos
+// La fecha de creación se pone por defecto la actual desde la tabla
 console.log("estoy en ruta POST/api/articulos");
 router.post("/", async (req, res) => {
   try {
