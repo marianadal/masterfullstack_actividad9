@@ -1,7 +1,12 @@
 // Se importan todos los métodos del modelo de autor.
 // En autor.model.js tienen que haberse exportado primero
 // Más abajo si llamamos al método autocompletando se importará aquí él solo.
-const { getAll, getByAutorId } = require("../../models/articulo.model");
+const {
+  getAll,
+  getByAutorId,
+  create,
+  getById,
+} = require("../../models/articulo.model");
 
 const router = require("express").Router();
 
@@ -35,5 +40,15 @@ router.get("/autor/:autorId", async (req, res) => {
 });
 
 // POST /api/articulos
+console.log("estoy en ruta POST/api/articulos");
+router.post("/", async (req, res) => {
+  try {
+    const [result] = await create(req.body);
+    const [articulo] = await getById(result.insertId);
+    res.json(articulo[0]);
+  } catch (error) {
+    res.status(503).json({ errorCreacionArticulo: error.message });
+  }
+});
 
 module.exports = router;
