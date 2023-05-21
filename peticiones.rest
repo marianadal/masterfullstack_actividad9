@@ -9,7 +9,15 @@ GET {{host}}/api/autores
 ###
 GET {{host}}/api/autores/4
 
+###
+POST {{host}}/api/autores
+Content-Type: application/json
 
+{
+    "nombre": "Autor de prueba",
+    "email": "email de prueba",
+    "imagen": "https://"
+}
 
 
 #################
