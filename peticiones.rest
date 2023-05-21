@@ -16,3 +16,6 @@ GET {{host}}/api/autores
 #################
 ################# API ARTICULOS
 GET {{host}}/api/articulos
+
+###
+GET {{host}}/api/articulos/autor/2
