@@ -21,6 +21,23 @@ router.get("/", async (req, res) => {
   }
 });
 
+// GET /api/articulos/articuloId
+router.get("/:articuloId", async (req, res) => {
+  const { articuloId } = req.params;
+  console.log(articuloId);
+  try {
+    const [articulo] = await getById(articuloId);
+    if (articulo.length === 0) {
+      return res.json({
+        errorArticuloById: "No existe ningún artículo por ese Id",
+      });
+    }
+    res.json(articulo);
+  } catch (error) {
+    res.status(503).json({ errorArticuloById: error.message });
+  }
+});
+
 // GET /api/articulos/autor/autorId
 console.log("estoy en ruta /api/articulos/autor/autorId");
 router.get("/autor/:autorId", async (req, res) => {

@@ -27,6 +27,9 @@ Content-Type: application/json
 GET {{host}}/api/articulos
 
 ###
+GET {{host}}/api/articulos/3
+
+###
 GET {{host}}/api/articulos/autor/2
 
 ###
