@@ -22,7 +22,4 @@ app.use("/users", usersRouter);
 
 app.use("/api", apiRouter);
 
-//También se puede hacer el require y la delegación en una sola línea sin la variable auxiliar
-//app.use('/api', require('./routes/api'));
-
 module.exports = app;
